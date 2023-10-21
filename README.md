@@ -8,11 +8,8 @@ Briefly describe your project in one or two sentences.
 1. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installing](#installing)
-2. [Usage](#usage)
-3. [API Documentation](#api-documentation)
-4. [Configuration](#configuration)
-5. [Contributing](#contributing)
-6. [License](#license)
+2. [Configuration](#configuration)
+
 
 ## Getting Started
 
@@ -38,3 +35,70 @@ cd your-repo
 
 # Install dependencies
 npm install
+
+
+### configuration
+
+# Create a .env file and set your configuration variables
+DB_CONNECTION_STRING='mongodb://localhost:27017/your-database'
+
+To START-
+write nodemon app.js or npm start
+
+
+API CALLS-
+to make requests you can use postman
+
+## Usage
+
+### Making Requests with Postman
+
+You can use [Postman](https://www.postman.com/) to interact with the API. Follow the steps below to make requests:
+
+1. Download and install Postman if you haven't already.
+2. Open Postman and create a new collection for your project.
+
+### Sending a GET Request
+
+#### Retrieve Orders (Seller)
+
+- **Method:** GET
+- **Endpoint:** `http://your-api-endpoint/api/seller/orders`
+- **Headers:** Add an `Authorization` header with the token.
+- **Description:** Retrieve the list of orders received by a seller.
+
+#### Retrieve Orders (Specific Seller)
+
+- **Method:** GET
+- **Endpoint:** `http://your-api-endpoint/api/seller/orders`
+- **Headers:** Add an `Authorization` header with the token.
+- **Body (JSON):**
+  ```json
+  {
+    "sellerId": "your-seller-id"
+  }
+
+Sending a POST Request
+Create an Order (Buyer)
+Method: POST
+Endpoint: http://your-api-endpoint/api/buyer/create-order/:seller_id
+Headers: Add an Authorization header with the token.
+Params:
+:seller_id: The ID of the seller for whom the order is created.
+Body (JSON):
+
+{
+  "items": [
+    {
+      "product": "Product 1",
+      "quantity": 2
+    },
+    {
+      "product": "Product 2",
+      "quantity": 3
+    }
+  ]
+}
+
+
+
